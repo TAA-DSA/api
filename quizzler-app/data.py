@@ -10,10 +10,10 @@ Parse the JSON response and replace the value of question_data
 Hint: create a python dictionary for the amount and type parameter
 """
 
-parameters = {"amount": 10, "type": "boolean"}
+parameters = {"amount": 10, "type": "boolean", "category": 18}
 
 data = requests.get(
-    "https://opentdb.com/api.php?amount=10&type=boolean", params=parameters
+    "https://opentdb.com/api.php?amount=10&category=18&type=boolean", params=parameters
 )
 
 question_data = data.json()["results"]

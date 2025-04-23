@@ -55,13 +55,12 @@ class QuizUI:
             self.btn_false.config(state="disabled")
 
     def answer_true(self):
-        self.feedback(self.quiz.check_answer(user_answer="true"))
+        is_true = self.feedback(self.quiz.check_answer(user_answer="true"))
         self.label.config(text=f"score: {self.quiz.score}")
 
     def answer_false(self):
-        is_right = "false"
-        self.quiz.check_answer(user_answer=is_right)
-        self.feedback()
+
+        self.feedback(self.quiz.check_answer(user_answer="false"))
 
     def feedback(self, is_true):
         self.is_true = is_true
